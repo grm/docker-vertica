@@ -51,6 +51,8 @@ else
   su - dbadmin -c "/opt/vertica/bin/admintools -t start_db -d ${DATABASE_NAME} ${DBPW} --noprompts --timeout=never"
 fi
 
+sleep 5
+
 echo
 if [ -d /docker-entrypoint-initdb.d/ ]; then
   echo "Running entrypoint scripts ..."
